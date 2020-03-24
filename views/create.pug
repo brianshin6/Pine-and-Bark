@@ -1,0 +1,10 @@
+extends ./layout.pug
+
+block content
+    p Create a Product
+    form(action="/products" method="post" enctype="multipart/form-data")
+        input(type="file" placeholder="product picture" name="file")
+        input(type="text" placeholder="product name" required="required" name="product")
+        //- input(type="text" placeholder="product price" required="required" name="price")
+        //- input(type="text" placeholder="product stock" required="required" name="stock")
+        button Create

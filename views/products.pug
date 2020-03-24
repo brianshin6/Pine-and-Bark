@@ -1,0 +1,17 @@
+extends ./layout.pug
+
+block content
+    a(href="/create" class="btn btn-primary") Create
+    p= variables.pageTitle
+    hr
+    .card-group
+        each pr in variables.lineup
+            .col-xs-12.col-md-4.col-lg-3
+                a(href="/lineup/" + pr._id)
+                    .card
+                        img(class="card-img-top" src='/img/products/' + pr.image alt=pr.image)
+                        .card-body
+                            h5(class="card-title")= pr.name
+                            p(class="card-text")= pr.name
+                            a(href="/delete/" + pr._id class="btn btn-danger") Delete
+                            a(href="/update/" + pr._id class="btn btn-info") Update
