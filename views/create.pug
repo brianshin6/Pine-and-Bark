@@ -1,10 +1,8 @@
 extends ./layout.pug
 
 block content
-    p Create a Product
-    form(action="/products" method="post" enctype="multipart/form-data")
+    p This is a form that you can use to create a new superhero
+    form(action="/lineup" method="post" enctype="multipart/form-data")
         input(type="file" placeholder="product picture" name="file")
         input(type="text" placeholder="product name" required="required" name="product")
-        //- input(type="text" placeholder="product price" required="required" name="price")
-        //- input(type="text" placeholder="product stock" required="required" name="stock")
         button Create

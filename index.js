@@ -1,22 +1,21 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
-const port = 3000;
-//Mongoose implementation
+const port = process.env.PORT || 3000;
+
 const mongoose = require('mongoose');
-//let uri = "mongodb+srv://node-site-example:node-site-example1234@cluster0-1regk.mongodb.net/comics?retryWrites=true&w=majority";
+
 let uri = "mongodb://localhost:27017/products";
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-//Mongoose Model (Work as a Schema)
+
 const Product = mongoose.model('Product', {
     name: String,
     image: String
 });
 
-//This is what you use to have multipart form data
+
 const multer = require('multer');
-// SET STORAGE
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'public/img/products')
@@ -46,11 +45,11 @@ app.get('/create', (req, res) => {
     res.render('create');
 })
 //detail view
-app.get('/lineup/:id', async (req, res) => {
+app.get('/products/:id', async (req, res) => {
     //internal scope of this function
     const selectedId = req.params.id;
     const document = await Product.findById(selectedId).exec();
-    res.render('detailedProduct', { product: document });
+    res.render('lineup', { product: document });
 });
 //update view
 app.get('/update/:id', async (req, res) => {
@@ -123,14 +122,10 @@ function deleteImage(image){
     if (fs.existsSync(dir)) {
         fs.unlink(dir, (err) => {
             if (err) throw err;
-            console.log('successfully deleted images from products');
+            console.log('successfully deleted images from folder products');
         });
     }
 }
-
-app.get('/', (req, res) => {
-    res.render('home', {})
-  });
 
 app.get('/about', (req, res) => {
     res.render('about', {})
@@ -140,11 +135,10 @@ app.get('/contact', (req, res) => {
     res.render('contact', {})
 });
 
+app.get('/', (req, res) => {
+    res.render('home', {})
+  });
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
-
-
-
-
