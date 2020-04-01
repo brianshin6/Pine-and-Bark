@@ -1,7 +1,31 @@
 extends ./layout.pug
 
 block content
- body.home
-  .centerpiece
-    p  PINE & BARK 
+  body.home
+    div.carousel
+      #carouselExampleInterval.carousel.slide(data-ride='carousel')
+        .carousel-inner
+          .carousel-item.active(data-interval='10000')
+            img.d-block.w-100(src='../img/6pack.jpg', alt='6Pack')
+          .carousel-item(data-interval='2000')
+            img.d-block.w-100(src='../img/3pack.jpg', alt='3Pack')
+          .carousel-item
+            img.d-block.w-100(src='../img/bosswithfrenchie.jpg', alt='bosswithfrenchie')
+        a.carousel-control-prev(href='#carouselExampleInterval', role='button', data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouselExampleInterval', role='button', data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+        button.btn.btn-light.btn-lg(type='button') 
+          a(href='/products' style='color:inherit')  Browse Now
+
+
+      
+
+  
+
+    
+  
+    
       

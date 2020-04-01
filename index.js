@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 
 const mongoose = require('mongoose');
 
-let uri = "mongodb://localhost:27017/products";
+let uri = "mongodb+srv://pinebark:pine1234@cluster0-dk3hb.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
