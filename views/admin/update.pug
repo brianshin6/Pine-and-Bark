@@ -1,0 +1,23 @@
+extends ../layout.pug
+
+block content
+    p This is a form that you can use to Update an existing product
+    form(action="/admin/update" method="post")
+        input#inputId(type='hidden' name="id" value=product.id)
+        .form-group.row
+            label.col-sm-2.col-form-label(for='inputName') Name
+            .col-sm-10
+                input#inputName.form-control(type='text' placeholder='Name' name="name" value=product.name)
+        .form-group.row
+            label.col-sm-2.col-form-label(for='inputName') Description
+            .col-sm-10
+                input#inputName.form-control(type='text' placeholder='Description' name="description" value=product.description)        
+        .form-group.row
+            label.col-sm-2.col-form-label(for='inputPrice') Price
+            .col-sm-10
+                input#inputPrice.form-control(type='text' placeholder='Price' name="price" value=product.price)
+        .form-group.row
+            label.col-sm-2.col-form-label(for='inputImage') Image
+            .col-sm-10
+                input#inputImage.form-control(type='text' placeholder='Image' name="image" value=product.image)
+        button.btn.btn-primary Update

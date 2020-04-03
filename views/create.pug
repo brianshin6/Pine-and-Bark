@@ -1,8 +1,0 @@
-extends ./layout.pug
-
-block content
-    p This is a form that you can use to create a new superhero
-    form(action="/lineup" method="post" enctype="multipart/form-data")
-        input(type="file" placeholder="product picture" name="file")
-        input(type="text" placeholder="product name" required="required" name="product")
-        button Create

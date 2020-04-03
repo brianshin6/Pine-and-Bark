@@ -6,6 +6,7 @@
 body, html {
   height: 100%;
   width: 100%;
+  font-family: "Bradley Hand", cursive;
 }
 
 body.home {
@@ -14,10 +15,6 @@ body.home {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-a.navbar-brand {
-  font-family: "Bradley Hand", cursive;
 }
 
 div.carousel {
@@ -42,11 +39,27 @@ button.btn.btn-light {
 }
 
 h2.about {
-  font-family: "Bradley Hand", cursive;
   margin: auto;
   text-align: center;
 }
 
+h1.display-4 {
+ text-align: center;
+}
+
+.col-md-6.col-xl-6-main {
+  margin: auto;
+}
+
+p.lead {
+    text-align: center;
+}
+
+img.card-img-top {
+    height: 350px;
+}
+
 .col-md-6.col-xs-6-text {
-  font-family: "Bradley Hand", cursive;
+  text-align: center;
+  margin: auto;
 }

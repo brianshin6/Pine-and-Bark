@@ -1,18 +1,18 @@
-extends ./layout.pug
+extends ../layout.pug
 
 block content
-  .jumbotron
-            h1.display-4 Products
-            p.lead Contact us for orders!
-  .container
+  br
+  a.btn.btn-primary(href='/admin/create') Create New Product
+  p
     .row
       .card-group
         each product in products
-          .col-sm-4
+          .col-sm-3
             .card.mt-4(style='width: 18rem;')
               img.card-img-top(src=product.image alt=product.name)
               .card-body
                 h5.card-title=product.name
                 p.card-text=product.description
                 p.card-text Price: $#{product.price}
-                a.btn.btn-success(href='contact') Contact Us to Purchase
+                a.btn.btn-info(href='/admin/update/' + product.id) Update
+                a.btn.btn-danger(href="/admin/delete/" + product.id) Delete
