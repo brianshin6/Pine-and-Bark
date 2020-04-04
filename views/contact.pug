@@ -4,12 +4,24 @@ block content
     .jumbotron
         h1.display-4 Contact Us
         p.lead
-    br
+    .container
+        h5.contact Join us on social media or send us an email for orders!
     br
     .container
             .row
-                .col-md-6.col-xl-6-main            
-                    h5 Join us on social media or send us an email for orders!
+                .col-md-6.col-xl-6          
+                    form.contact(action="//formspree.io/pineandbark@gmail.com" method="post" )
+                        .form-group
+                            label(for='exampleFormControlInput1') Name
+                            input#exampleFormControlInput1.form-control(type='text' placeholder='Your Name')
+                        .form-group
+                            label(for='exampleFormControlInput1') Email address
+                            input#exampleFormControlInput1.form-control(type='email' placeholder='name@example.com')
+                            small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+                        .form-group
+                            label(for='exampleFormControlTextarea1') Message
+                            textarea#exampleFormControlTextarea1.form-control(type='text' placeholder='Your Message' rows='3')
+                        button.btn.btn-primary Send
                 .col-md-6.col-xl-6
                     hr
                     p Instagram
@@ -18,8 +30,13 @@ block content
                     p Facebook
                     a(href='https://www.facebook.com/pineandbark/') facebook.com/pineandbark
                     hr
-                    p Email
-                    a(href='mailto:pineandbark@gmail.com') pineandbark@gmail.com
-                    hr
+   
+        
+    
+    
+        
+        
+        
+        
     
     
