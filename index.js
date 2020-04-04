@@ -1,8 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose');
 const app = express()
-const port = process.env.PORT || 3000
 var bodyParser = require('body-parser')
+const port = process.env.PORT || 3000
+
 
 
 //Middlewares
@@ -10,8 +11,6 @@ app.set('view engine', 'pug')
 app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.urlencoded({ extended: false}))
-app.use(express.json())
 
 //Database connection
 let uri = "mongodb://pinebark:pine1234@cluster0-shard-00-00-dk3hb.mongodb.net:27017,cluster0-shard-00-01-dk3hb.mongodb.net:27017,cluster0-shard-00-02-dk3hb.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority";
@@ -42,4 +41,4 @@ app.get('/admin/delete/:id', adminDelete)
 app.get('/contact', contact)
 
 
-app.listen(port, () => console.log(`Shopping cart running on port ${port}!`))
+app.listen(port, () => console.log(`Pine and Bark running on port ${port}!`))
