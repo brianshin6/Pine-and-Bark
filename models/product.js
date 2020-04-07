@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-//Mongoose Model (Work as a Schema)
+//Mongoose Model
 const Product = mongoose.model('Product', {
     name: String,
     price: Number,
